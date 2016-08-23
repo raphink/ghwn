@@ -98,7 +98,7 @@
         <div class="item">
           <p>
             <strong><%= model.type %></strong>
-            on <%= model.repo.name %>
+            on <a href="https://github.com/<%= model.repo.name %>" target=_><%= model.repo.name %></a>
             by <img src="<%= model.actor.avatar_url %>" class="avatar" /> <%= model.actor.login %>
             at <%= new Date(model.created_at).toLocaleTimeString() %>
           </p>
