@@ -45,6 +45,8 @@ var ListView = Backbone.View.extend({
 var eventURL = function(event) {
   if (event.type == 'PullRequestEvent') {
     return event.payload.pull_request.html_url
+  } else if (event.type == 'PullRequestReviewCommentEvent') {
+    return event.payload.comment.html_url
   } else if (event.type == 'PushEvent') {
     return 'https://github.com/'+event.repo.name+'/compare/'+event.payload.before+'...'+event.payload.head
   } else if (event.type == 'IssuesEvent') {
